@@ -6,7 +6,7 @@ function App() {
   const [result, setResult] = useState('');
 
   const onChangeValue = (num) => {
-    if (result !== '') {
+    if (result !== '' && result !== undefined) {
       setResult('');
       if (num.match(/[1-9]/g)) {
         setValue('');
@@ -21,7 +21,7 @@ function App() {
     try {
       setResult(eval(value));
     } catch (error) {
-      setResult(error);
+      setResult('Error');
     }
   };
 
